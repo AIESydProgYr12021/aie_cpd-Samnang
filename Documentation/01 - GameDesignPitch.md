@@ -4,19 +4,28 @@ This is a skeleton/reference for a game design pitch. A full design will be much
 ## Working Title
 Your game’s title should communicate the gameplay and the style of the game 
 
+"Bomb go Boom"
+
 ## Concept statement  
 The game in a tweet: one or two sentences at most that say what the game is and why it’s fun.  
+
+"bomb go boom" is a strategic, maze-based video game
 
 ## Target audience  
 Age, gender, game or other relevant interests
 
+7 and up
+
 ## Reference
 Are there simular games? what are they, how do they relate, how is your game different?
+
+bomberman
 
 ## Player experience and game POV 
 
 - Who is the player? What is the setting? What is the fantasy the game grants the player? What emotions do you want the player to feel? What are the major phases of the player’s experience in the game?  
 
+the player is a man that can place bombs in a tiled map area. i want this game to feel fun and have the player enjoy the different ways to complete a level.
 
 ## Unique Selling Points
 What makes your game stand out? How is it different from all other games? 
