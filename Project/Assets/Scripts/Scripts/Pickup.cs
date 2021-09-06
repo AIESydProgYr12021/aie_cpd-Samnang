@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public AudioSource collectSound;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        collectSound.Play();
+        ScoringSystem.theScore += 50;
+        Destroy(gameObject);
     }
 }

@@ -1,15 +1,14 @@
 # Game Design Pitch
 This is a skeleton/reference for a game design pitch. A full design will be much longer!   
 
-## Working Title
-Your game’s title should communicate the gameplay and the style of the game 
 
+## Working Title
 "Bomb go Boom"
 
 ## Concept statement  
 The game in a tweet: one or two sentences at most that say what the game is and why it’s fun.  
 
-"bomb go boom" is a strategic, maze-based video game
+"bomb go boom" is a strategic, maze-based video game, where you the player go around and blow brick walls up. and to finnish the game u need to collect 3 points at the end of the map.
 
 ## Target audience  
 Age, gender, game or other relevant interests
@@ -19,13 +18,13 @@ Age, gender, game or other relevant interests
 ## Reference
 Are there simular games? what are they, how do they relate, how is your game different?
 
-bomberman
+bomberman, my game is differnt, no ballons or pvp.
 
 ## Player experience and game POV 
 
 - Who is the player? What is the setting? What is the fantasy the game grants the player? What emotions do you want the player to feel? What are the major phases of the player’s experience in the game?  
 
-the player is a man that can place bombs in a tiled map area. i want this game to feel fun and have the player enjoy the different ways to complete a level.
+the player is a ball that can place bombs in a tiled map area. i want this game to feel fun and have the player enjoy the different ways to complete a level.
 
 ## Unique Selling Points
 What makes your game stand out? How is it different from all other games? 
@@ -33,13 +32,17 @@ What makes your game stand out? How is it different from all other games?
 ## Genre(s) 
 Single genre is clearer but often less interesting. Genre combinations can be risky. Beware of ‘tired’ genres.  
 
+single player
+
 ## Platform(s) and primary technology 
 - PC or mobile? Table or phone? 2D or 3D? Unity or Javascript?
+
+pc and mobile and the primary tech is Unity.
 
 ## Visual/audio Style 
 What is the "look and feel" of the game? How does this support the desired player’s experience? What concept art or reference art can you show to give the feel of the game? 
 
-
+the feel of the game is "Simple"
 
 
 ## Game Systems

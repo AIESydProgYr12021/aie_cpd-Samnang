@@ -4,4 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: cf3742367c4d600498ea14a311a7e236
+  - enabled: 1
+    path: Assets/Scenes/Bomberman.unity
+    guid: da3784b385991ae42b41638ca3ab4efc
+  m_configObjects: {}
