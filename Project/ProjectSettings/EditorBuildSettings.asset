@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Bomberman.unity
     guid: da3784b385991ae42b41638ca3ab4efc
+  - enabled: 1
+    path: Assets/Scenes/PauseMenu.unity
+    guid: 3a8df82aee1871a4cb6610afc5513d63
   m_configObjects: {}

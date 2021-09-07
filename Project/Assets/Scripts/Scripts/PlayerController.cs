@@ -14,11 +14,10 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        rigid = GetComponent<Rigidbody>();
+        rigid = GetComponent<Rigidbody>();  
     }
 
     // Update is called once per frame
-
     private void Update()
     {
         //timer += Time.deltaTime;
@@ -26,6 +25,7 @@ public class PlayerController : MonoBehaviour
 
         BombDrop();
     }
+
     void FixedUpdate()
     {
         float xDirection = Input.GetAxis("Horizontal");

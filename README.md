@@ -1,7 +1,9 @@
 # PROJECT NAME
 
+Bomb GO Boom
+
 ## About the Game
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The Game "Bomb Go Boom" is a game similar to bomberman. you have to move around and collect coins to win the game.
 
 ### Contributors:
 Contributors to the project are strictly limated to AIE Students as part of their group work project.
@@ -32,8 +34,6 @@ The project can currently be built for both windows and webgl in the following w
 
 ## Daily Builds:
 Daily builds of the project should be placed on the local campus network drive
-
-
 
 # Credits:
  Are there assets, sounds or media included within the project that require attributation? list them here:
