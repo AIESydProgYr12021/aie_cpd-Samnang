@@ -13,6 +13,11 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
     private Image container;
     private Image joystick;
 
+    public bool showControl = true;
+    private bool isControllsShowing = true;
+    public bool syncWithInput = true;
+    private bool isDragging = false;
+
     private Vector3 direction;
     public Vector3 Direction { get { return direction; } }
 
@@ -23,6 +28,16 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
         joystick = imgs[1]; // Joystick on the first child
     }
 
+    void Update()
+    {
+        if (showControl != isControllsShowing)
+        {
+            container.enabled = showControl;
+            joystick.enabled = showControl;
+            isControllsShowing = showControl;
+        }
+    }
+
     public virtual void OnDrag(PointerEventData ped)
     {
         Vector2 pos = Vector2.zero;
@@ -31,17 +46,17 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
             pos.x = (pos.x / container.rectTransform.sizeDelta.x);
             pos.y = (pos.y / container.rectTransform.sizeDelta.y);
 
-            // Pivot might be giving us an offset, adjust it here
-            Vector2 p = container.rectTransform.pivot;
+            //Pivot might be giving us an offset, adjust it here
+           Vector2 p = container.rectTransform.pivot;
             pos.x += p.x - 0.5f;
             pos.y += p.y - 0.5f;
 
-            // Clamp our values
-            float x = Mathf.Clamp(pos.x,-1, 1);
+            //Clamp our values
+            float x = Mathf.Clamp(pos.x, -1, 1);
             float y = Mathf.Clamp(pos.y, -1, 1);
             direction = new Vector3(x, 0, y).normalized;
 
-            // Also move the visual to reflect the inputs
+            //Also move the visual to reflect the inputs
             joystick.rectTransform.anchoredPosition = new Vector3(direction.x * joystickVisualDistance, direction.z * joystickVisualDistance);
         }
     }

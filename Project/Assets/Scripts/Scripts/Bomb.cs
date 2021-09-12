@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
+    public HeartSystem health;
 
     public float delay = 3f;
     public float radius = 5f;
     public float force = 700f;
 
     public GameObject explosionEffect;
+
+    public int damage = 1;
 
     float countdown;
     bool hasExploded = false;
@@ -18,6 +21,7 @@ public class Bomb : MonoBehaviour
     void Start()
     {
         countdown = delay;
+        health = GameObject.FindGameObjectWithTag("Player").GetComponent<HeartSystem>();
     }
 
     // Update is called once per frame
@@ -29,6 +33,11 @@ public class Bomb : MonoBehaviour
             Expode();
             hasExploded = true;
         }
+        if(health.current <= 0)
+        {
+            Debug.Log("dead");
+        }
+     
     }
 
     void Expode()
@@ -54,5 +63,10 @@ public class Bomb : MonoBehaviour
         }
 
         Destroy(gameObject);
+    }
+
+    void Attack()
+    {
+        health.TakeDamage(damage);
     }
 }

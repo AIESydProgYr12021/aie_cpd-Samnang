@@ -18,7 +18,8 @@ public class ScoringSystem : MonoBehaviour
     void Update()
     {
         scoreText.GetComponent<Text>().text = "SCORE: " + theScore;
-        if(theScore == 200)
+
+        if(theScore >= 200)
         {
             winTexrt.SetActive(true);
         }
