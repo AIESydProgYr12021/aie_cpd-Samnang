@@ -10,6 +10,8 @@ public class Bomb : MonoBehaviour
     public float radius = 5f;
     public float force = 700f;
 
+    public MeshRenderer mesh;
+
     public GameObject explosionEffect;
 
     public int damage = 1;
@@ -17,11 +19,14 @@ public class Bomb : MonoBehaviour
     float countdown;
     bool hasExploded = false;
 
+    AudioSource source;
+
     // Start is called before the first frame update
     void Start()
     {
+        source = GetComponent<AudioSource>();
         countdown = delay;
-        health = GameObject.FindGameObjectWithTag("Player").GetComponent<HeartSystem>();
+        //health = GameObject.FindGameObjectWithTag("Player").GetComponent<HeartSystem>();
     }
 
     // Update is called once per frame
@@ -33,15 +38,18 @@ public class Bomb : MonoBehaviour
             Expode();
             hasExploded = true;
         }
-        if(health.current <= 0)
-        {
-            Debug.Log("dead");
-        }
+        //if(health.current <= 0)
+        //{
+        //    Debug.Log("dead");
+        //}
      
     }
 
     void Expode()
     {
+        mesh.enabled = false;
+        source.Play();
+
         Instantiate(explosionEffect, transform.position, transform.rotation);
 
         Collider[] colliders =  Physics.OverlapSphere(transform.position, radius);
@@ -59,14 +67,9 @@ public class Bomb : MonoBehaviour
             {
                 dest.Destroy();
             }
-
         }
-
-        Destroy(gameObject);
+        Destroy(gameObject, 3);
     }
 
-    void Attack()
-    {
-        health.TakeDamage(damage);
-    }
+   
 }
