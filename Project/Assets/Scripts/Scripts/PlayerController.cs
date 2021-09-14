@@ -6,44 +6,102 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
-    public float timer;
 
-    public Transform SpawnPoint;
-    public GameObject Prefab;
-    int maxPlatForm = 0;
+    public GameObject prefab;
 
-    private Rigidbody rigid;
+    float lerpTime = 0f;
+
+    Vector3 currentPos;
+    Vector3 targetPos;
+
+    bool canMove = true;
+
 
     private void Start()
     {
-        rigid = GetComponent<Rigidbody>();  
+        currentPos = transform.position;
+        targetPos = currentPos;
     }
 
-    // Update is called once per frame
-    private void Update()
+    void Update()
     {
-        //timer += Time.deltaTime;
-        //Debug.Log(timer);
+        if (!canMove)
+            lerpTime += Time.deltaTime * speed;
 
+        transform.position = Vector3.Lerp(currentPos, targetPos, lerpTime);
+
+        if(lerpTime >= 1.0f)
+        {
+            lerpTime = 0f;
+            currentPos = transform.position;
+            canMove = true;
+        }
+
+        if (canMove)
+        {
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                MoveForwards();
+            }
+            else if (Input.GetKeyDown(KeyCode.S))
+            {
+                MoveBackwards();
+            }
+            else if (Input.GetKeyDown(KeyCode.D))
+            {
+                MoveRight();
+            }
+            else if (Input.GetKeyDown(KeyCode.A))
+            {
+                MoveLeft();
+            }
+        }
+        
         BombDrop();
     }
 
-    void FixedUpdate()
+    public void MoveForwards()
     {
-        float xDirection = Input.GetAxis("Horizontal");
-        float zDirection = Input.GetAxis("Vertical");
+        if(!Physics.Raycast(transform.position, Vector3.forward, 1.0f, 1 << 3))
+        {
+            targetPos.z += 1;
+            canMove = false;
+        }
+       
+    }
 
-        Vector3 moveDirection = new Vector3(xDirection, 0.0f, zDirection);
+    public void MoveBackwards()
+    {
+        if (!Physics.Raycast(transform.position, -Vector3.forward, 1.0f, 1 << 3))
+        {
+            targetPos.z -= 1;
+            canMove = false;
+        }
+    }
 
-        rigid.AddForce(moveDirection * speed);
-     
+    public void MoveRight()
+    {
+        if (!Physics.Raycast(transform.position, Vector3.right, 1.0f, 1 << 3))
+        {
+            targetPos.x += 1;
+            canMove = false;
+        }
+    }
+
+    public void MoveLeft()
+    {
+        if (!Physics.Raycast(transform.position, -Vector3.right, 1.0f, 1 << 3))
+        {
+            targetPos.x -= 1;
+            canMove = false;
+        }
     }
 
     private void BombDrop()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(Prefab, SpawnPoint.position, SpawnPoint.rotation);
+            Instantiate(prefab, transform.position, Quaternion.identity);
         }
     }
 

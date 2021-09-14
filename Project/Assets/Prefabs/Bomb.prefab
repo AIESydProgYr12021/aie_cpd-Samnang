@@ -50,8 +50,7 @@ MonoBehaviour:
   radius: 1
   force: 700
   mesh: {fileID: 1068070391095090022}
-  explosionEffect: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664,
-    type: 3}
+  explosionEffect: {fileID: 177540, guid: 69dfce71c987ee94ebd40421847e3c8e, type: 3}
   damage: 1
 --- !u!82 &5355378639715076833
 AudioSource:
